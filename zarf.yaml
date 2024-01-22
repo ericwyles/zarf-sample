@@ -1,0 +1,25 @@
+kind: ZarfPackageConfig # ZarfPackageConfig is the package kind for most normal zarf packages
+metadata:
+  name: ewyles-spring-boot-demo
+  version: 1.0.0       
+  description:  "A Zarf Package that deploys a simple spring boot app"
+
+components:
+  - name: ewyles-spring-boot-demo  
+    description: "Deploys the spring boot demo"
+    required: true
+    images:
+      - busybox
+      - ericwyles/springboot-helm-chart:jre-17
+    charts:
+      - name: ewyles-spring-boot
+        version: 1.0.0
+        namespace: ewyles-spring-boot
+        localPath: demoweb/charts/springboot-demoweb/ 
+        valuesFiles:
+          - ewyles-spring-boot-demo-values.yaml
+    manifests:
+      - name: connect-services
+        namespace: ewyles-spring-boot
+        files:
+          - connect-services.yaml

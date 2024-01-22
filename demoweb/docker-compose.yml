@@ -1,0 +1,9 @@
+version: "2"
+services:
+  web:
+    build:
+        context: .
+    image: ericwyles/springboot-helm-chart:jre-17
+    ports:
+      - 8080:8080
+    restart: always
