@@ -4,7 +4,7 @@ Initial app is adapted from https://github.com/binblee/springboot-helm-chart and
 
 I have not linked it to any CICD or github actions yet, but for local tinkering you can do the following:
 
-### Build the docker image
+## Build the docker image
 
 ```
 cd demoweb
@@ -42,7 +42,7 @@ image:
 ```
 
 
-### Build the zarf package
+## Build the zarf package
 
 After the docker image is built, run the following from the root of the repository
 
@@ -106,7 +106,7 @@ components:
 ```
 
 
-### Deploy the zarf package
+## Deploy the zarf package
 
 Assuming you already have a kubernetes cluster with zarf initialized, run 'zarf package deploy <package name>'
 
