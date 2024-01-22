@@ -150,4 +150,18 @@ ericwyles@Erics-MacBook-Pro springboot-helm-chart % curl http://127.0.0.1:60959
 Hello World.
 ```
 
+The package now also shows up in 'zarf package list' in your local cluster
+
+```
+ericwyles@Erics-MacBook-Pro zarf-sample % zarf package list
+
+ NOTE  Saving log file to
+       /var/folders/sq/wmg9n0c549q4x4tw019bbrn80000gn/T/zarf-2024-01-22-17-43-54-2481246190.log
+  ✔  Waiting for cluster connection (30s timeout)                                                                                                                    
+
+     Package                 | Version | Components
+     ewyles-spring-boot-demo | 1.0.0   | [ewyles-spring-boot-demo]
+     init                    | v0.32.1 | [zarf-injector zarf-seed-registry zarf-registry zarf-agent logging git-server]
+```
+
 
